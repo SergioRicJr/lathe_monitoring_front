@@ -28,7 +28,7 @@ export default function RootLayout({
             <div className="min-h-screen w-screen flex flex-col">
               {children}
             </div>
-            <ModeToggle className="fixed right-4 bottom-6" />
+            
           </ThemeProvider>
       </body>
     </html>
