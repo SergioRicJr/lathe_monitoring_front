@@ -42,189 +42,7 @@ import {
 import { MoreVertical } from "lucide-react"
 import { z } from "zod"
 import { ModeToggle } from "@/components/theme/modeToggle"
-
-const dados = [
-  {
-    user_id: 1,
-    piece_id: 101,
-    initial_dimension: 10,
-    desired_dimension: 15,
-    actual_dimension: 14.8,
-    start_datetime: "2024-10-01T08:00:00Z",
-    end_datetime: "2024-10-01T10:00:00Z",
-  },
-  {
-    user_id: 2,
-    piece_id: 102,
-    initial_dimension: 20,
-    desired_dimension: 25,
-    actual_dimension: 24.5,
-    start_datetime: "2024-10-01T09:00:00Z",
-    end_datetime: "2024-10-01T11:30:00Z",
-  },
-  {
-    user_id: 3,
-    piece_id: 103,
-    initial_dimension: 15,
-    desired_dimension: 20,
-    actual_dimension: 19.8,
-    start_datetime: "2024-10-01T07:30:00Z",
-    end_datetime: "2024-10-01T09:30:00Z",
-  },
-  {
-    user_id: 4,
-    piece_id: 104,
-    initial_dimension: 12,
-    desired_dimension: 18,
-    actual_dimension: 17.5,
-    start_datetime: "2024-10-01T10:00:00Z",
-    end_datetime: "2024-10-01T12:00:00Z",
-  },
-  {
-    user_id: 5,
-    piece_id: 105,
-    initial_dimension: 25,
-    desired_dimension: 30,
-    actual_dimension: 29.8,
-    start_datetime: "2024-10-01T06:00:00Z",
-    end_datetime: "2024-10-01T08:30:00Z",
-  },
-  {
-    user_id: 6,
-    piece_id: 106,
-    initial_dimension: 18,
-    desired_dimension: 22,
-    actual_dimension: 21.9,
-    start_datetime: "2024-10-01T11:00:00Z",
-    end_datetime: "2024-10-01T12:45:00Z",
-  },
-  {
-    user_id: 7,
-    piece_id: 107,
-    initial_dimension: 8,
-    desired_dimension: 12,
-    actual_dimension: 11.7,
-    start_datetime: "2024-10-01T12:00:00Z",
-    end_datetime: "2024-10-01T13:45:00Z",
-  },
-  {
-    user_id: 8,
-    piece_id: 108,
-    initial_dimension: 30,
-    desired_dimension: 35,
-    actual_dimension: 34.5,
-    start_datetime: "2024-10-01T05:30:00Z",
-    end_datetime: "2024-10-01T07:15:00Z",
-  },
-  {
-    user_id: 9,
-    piece_id: 109,
-    initial_dimension: 22,
-    desired_dimension: 26,
-    actual_dimension: 25.8,
-    start_datetime: "2024-10-01T04:00:00Z",
-    end_datetime: "2024-10-01T05:30:00Z",
-  },
-  {
-    user_id: 10,
-    piece_id: 110,
-    initial_dimension: 28,
-    desired_dimension: 33,
-    actual_dimension: 32.9,
-    start_datetime: "2024-10-01T13:00:00Z",
-    end_datetime: "2024-10-01T14:30:00Z",
-  },
-  {
-    user_id: 1,
-    piece_id: 101,
-    initial_dimension: 10,
-    desired_dimension: 15,
-    actual_dimension: 14.8,
-    start_datetime: "2024-10-01T08:00:00Z",
-    end_datetime: "2024-10-01T10:00:00Z",
-  },
-  {
-    user_id: 2,
-    piece_id: 102,
-    initial_dimension: 20,
-    desired_dimension: 25,
-    actual_dimension: 24.5,
-    start_datetime: "2024-10-01T09:00:00Z",
-    end_datetime: "2024-10-01T11:30:00Z",
-  },
-  {
-    user_id: 3,
-    piece_id: 103,
-    initial_dimension: 15,
-    desired_dimension: 20,
-    actual_dimension: 19.8,
-    start_datetime: "2024-10-01T07:30:00Z",
-    end_datetime: "2024-10-01T09:30:00Z",
-  },
-  {
-    user_id: 4,
-    piece_id: 104,
-    initial_dimension: 12,
-    desired_dimension: 18,
-    actual_dimension: 17.5,
-    start_datetime: "2024-10-01T10:00:00Z",
-    end_datetime: "2024-10-01T12:00:00Z",
-  },
-  {
-    user_id: 5,
-    piece_id: 105,
-    initial_dimension: 25,
-    desired_dimension: 30,
-    actual_dimension: 29.8,
-    start_datetime: "2024-10-01T06:00:00Z",
-    end_datetime: "2024-10-01T08:30:00Z",
-  },
-  {
-    user_id: 6,
-    piece_id: 106,
-    initial_dimension: 18,
-    desired_dimension: 22,
-    actual_dimension: 21.9,
-    start_datetime: "2024-10-01T11:00:00Z",
-    end_datetime: "2024-10-01T12:45:00Z",
-  },
-  {
-    user_id: 7,
-    piece_id: 107,
-    initial_dimension: 8,
-    desired_dimension: 12,
-    actual_dimension: 11.7,
-    start_datetime: "2024-10-01T12:00:00Z",
-    end_datetime: "2024-10-01T13:45:00Z",
-  },
-  {
-    user_id: 8,
-    piece_id: 108,
-    initial_dimension: 30,
-    desired_dimension: 35,
-    actual_dimension: 34.5,
-    start_datetime: "2024-10-01T05:30:00Z",
-    end_datetime: "2024-10-01T07:15:00Z",
-  },
-  {
-    user_id: 9,
-    piece_id: 109,
-    initial_dimension: 22,
-    desired_dimension: 26,
-    actual_dimension: 25.8,
-    start_datetime: "2024-10-01T04:00:00Z",
-    end_datetime: "2024-10-01T05:30:00Z",
-  },
-  {
-    user_id: 1111111,
-    piece_id: 110,
-    initial_dimension: 28,
-    desired_dimension: 33,
-    actual_dimension: 32.9,
-    start_datetime: "2024-10-01T13:00:00Z",
-    end_datetime: "2024-10-01T14:30:00Z",
-  },
-]
+import { DatePickerDemo } from "@/components/date-picker"
 
 export const ZodPiece = z.object({
   user_id: z.number(),
@@ -235,6 +53,13 @@ export const ZodPiece = z.object({
   start_datetime: z.string(),
   end_datetime: z.string(),
 })
+
+async function deletePiece(piece_id: number) {
+  await fetch(`http://127.0.0.1:8080/pieces/${piece_id}`, {
+    method: 'DELETE'
+  })
+  window.location.reload()
+}
 
 export const columns: ColumnDef<z.infer<typeof ZodPiece>>[] = [
   {
@@ -302,7 +127,7 @@ export const columns: ColumnDef<z.infer<typeof ZodPiece>>[] = [
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
-              <DropdownMenuItem onClick={() => console.log(row.getValue('id'))} className="hover:cursor-pointer">Excluir</DropdownMenuItem>
+              <DropdownMenuItem onClick={() => deletePiece(row.getValue('id'))} className="hover:cursor-pointer">Excluir</DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
         </div>
@@ -319,7 +144,18 @@ export function DataTableDemo() {
   const [filterStartValue, setFilterStartValue] = React.useState("");
   const [filterEndValue, setFilterEndValue] = React.useState("");
   const [pageSize, setPageSize] = React.useState(10);
-  const [data, setData] = React.useState(dados);
+  const [data, setData] = React.useState([]);
+
+  React.useEffect(() => {
+    fetch('http://127.0.0.1:8080/pieces')
+      .then(response => response.json())
+      .then(result => {
+        console.log(result);
+        setData(result.data); // Se você quiser atualizar os dados da tabela
+      })
+      .catch(error => console.error('Erro ao buscar dados:', error));
+  }, []);
+
 
   const table = useReactTable({
     data,
@@ -343,24 +179,8 @@ export function DataTableDemo() {
   return (
     <div className="w-full">
       <div className="flex items-center py-2 gap-2">
-        <Input
-          placeholder="Filter by start date"
-          value={filterStartValue}
-          onChange={(event) => {
-            setFilterStartValue(event.target.value);
-            table.getColumn("start_datetime")?.setFilterValue(event.target.value);
-          }}
-          className="max-w-sm"
-        />
-        <Input
-          placeholder="Filter by end date"
-          value={filterEndValue}
-          onChange={(event) => {
-            setFilterEndValue(event.target.value);
-            table.getColumn("end_datetime")?.setFilterValue(event.target.value);
-          }}
-          className="max-w-sm"
-        />
+        <DatePickerDemo filter={setFilterStartValue} table={table} column_name="start_datetime"/>
+        <DatePickerDemo filter={setFilterEndValue} table={table} column_name="end_datetime"/>
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button variant="outline" className="ml-auto">

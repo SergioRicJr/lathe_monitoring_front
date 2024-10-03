@@ -13,9 +13,9 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover"
 
-export function DatePickerDemo() {
+export function DatePickerDemo({filter, table, column_name}: any) {
   const [date, setDate] = React.useState<Date>()
-
+  // console.log(date? format(date, "yyyy-MM-dd"): '')
   return (
     <Popover>
       <PopoverTrigger asChild>
@@ -34,7 +34,12 @@ export function DatePickerDemo() {
         <Calendar
           mode="single"
           selected={date}
-          onSelect={setDate}
+          onSelect={(event) => {
+            console.log(event? format(event, "yyyy-MM-dd"): '')
+            setDate(event)
+            filter(event? format(event, "yyyy-MM-dd"): '')
+            table.getColumn(column_name)?.setFilterValue(event? format(event, "yyyy-MM-dd"): '');
+          }}
           initialFocus
         />
       </PopoverContent>
